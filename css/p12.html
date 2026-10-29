@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musafhir Cafe</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .box:hover{
+            background-color: rgb(171, 162, 162);
+        }
+
+        #navbar{
+            background-color: black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            position: fixed;
+        }
+
+        .box{
+            display: inline-block;
+            color: white;
+            width: 317px;
+            height: 30px;
+            padding-left: 140px;
+            padding-top: 5px;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
+        img{
+            width: 1280px;
+        }
+
+        #mainSection{
+            width: 800px;
+            margin: 50px auto;
+        }
+
+        #heading1{
+            background-color: black;
+            color: white;
+            width: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #para1{
+            margin: 30px;
+            padding: 0px;
+            font-size: 18px;
+
+        }
+        #para2{
+            margin: 30px;
+            padding: 0px;
+            font-size: 18px;
+        }
+        #para3{
+            margin: 30px;
+            padding: 15px;
+            font-size: 18px;
+            letter-spacing: 1.2px;
+            border-left: 5px solid red;
+            background-color: rgb(228, 243, 243);
+        }
+        #div2nd{
+            margin-top: 15px;
+        }
+        #coffeeshop{
+            width: 1010px;
+            padding-left: 31px;
+            padding-right: 237px;
+        }
+
+        p{
+            margin: 30px;
+            padding: 0px;
+            font-size: 18px;
+        }
+        
+        #menu{
+            width: 370px;
+            padding-left: 50px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding-left: 50px;
+            padding: 0px;
+            padding-left: 0px;
+            margin-left: 265px;
+            box-sizing: border-box;
+            display: inline-block;
+
+        }
+        #menu2{
+            width: 370px;
+            padding-left: 50px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding-left: 50px;
+            padding: 0px;
+            padding-left: 0px;
+            margin-left: 1px;
+            box-sizing: border-box;
+            display: inline-block;
+            /* padding-top: 124px; */
+        }
+        #headingmenu{
+             background-color: black;
+            color: white;
+            width: 190px;
+            text-align: center;
+            margin: 55px auto;
+            
+        }
+        #eat{
+        display: inline-block;
+        font-size: 18px;
+        text-align: center;
+        padding-left: 0px;
+        }
+        .EandD{
+            display: inline-block;
+            color: rgb(0, 0, 0);
+            width: 370px;
+            height: 30px;
+            padding-left: 155px;
+            padding-top: 5px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .main{
+            font-weight: 100;
+            font-size: 25px;
+            font-style: italic;
+            padding-left: 20px;
+            margin-bottom:price2;
+            background-color: white;
+        }
+        .main2{
+            font-weight: 100;
+            font-size: 25px;
+            font-style: italic;
+            padding-left: 20px;
+            margin-bottom:price2;
+            background-color: white;
+        }
+        .price{
+            margin-bottom: 65px;
+            
+            margin-top: 1px;
+        }
+        .price2{
+            margin-bottom: 59px;
+            margin-top: 6px;
+        }
+        #coffee2{
+            width: 1120px;
+            padding-left: 132px;
+            padding-right: 237px;
+            margin-top: 20px;
+        }
+        #find{
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+            background-color: black;
+            width: 340px;
+            margin-left: 445px;
+            font-size: 26px;
+            font-weight: 200;
+        }
+        #syrup #jamun{
+            margin-bottom: 0px;
+        }
+        #add{
+            margin-left: 263px;
+            margin-top: 50px;
+        }
+        #add h3{
+            font-weight: 100;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #map img{
+            width: 760px;
+            margin-left: 261px;
+            margin-top: 22px;
+        }
+        #FYI p{
+            font-weight: 100;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-left: 265px;
+            width: 769px;
+            word-spacing: 11.2px;
+            
+        }
+        #message p{
+            /* font-weight: 100; */
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-left: 265px;
+            width: 769px;
+            word-spacing: 11.2px;
+        }
+        #booktable input{
+            width: 765px;
+            margin-left: 262px;
+            height: 50px;
+            font-size: 17px;
+            letter-spacing: 1.2px;
+            padding-left: 8px;
+            border-radius: 5px;
+            border: 0.5px solid gray;
+            margin-top: 29px;
+        }
+        #button{
+            margin-left: 260px;
+            margin-top: 22px;
+            width: 153px;
+            border-radius: 0px;
+            background-color: black;
+            color: white;
+            font-size: 14px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-bottom: 120px;
+        }
+        #end{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 600;
+            margin-bottom: 100px;
+            margin-left: 600px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav id="navbar">
+            <div class="box"><a href="#header">Home</a></div>
+            <div class="box"><a href="#About">About</a></div>
+            <div class="box"><a href="#menu">Menu</a></div>
+            <div class="box"><a href="#find">Where</a></div>
+        </nav>
+        <div id="mainImage">
+            <img src="./image/cafe.jpg" alt="">
+        </div>
+    </header>
+
+    <section id="mainSection">
+        <div id="About">
+            <h1 id="heading1">ABOUT THE CAFE</h1>
+
+            <div id="para1">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore obcaecati ducimus quod odio, commodi ipsam incidunt, impedit natus est quo at blanditiis dolores quibusdam mollitia reiciendis perspiciatis numquam necessitatibus nihil.
+            </div>
+
+            <div id="para2">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis ullam rem reiciendis magnam molestiae excepturi dolore hic odio temporibus beatae, officiis mollitia voluptatibus quae et expedita quod ut quam totam?
+            </div>
+            
+            <div id="para3">
+
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, fugit officiis? Quibusdam natus totam aperiam labore quod, debitis maiores, explicabo quis amet nisi sed, cum officia. Illum veniam fugit sed?</div>
+                <div id="div2nd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, tempore.</div>
+            </div>
+            <img id="coffeeshop" src="./image/coffeeshop.jpg" alt="">
+
+            <p>
+                <b>Opening hours:</b> Everyday from 6am to 5pm.
+            </p>
+            <p>
+                <b>Address:</b> 15 Adr street, 5015, NY
+            </p>
+        </div>
+    </section>
+    <div id="headingmenu">
+        <h1>THE MENU</h1>
+    </div>
+    <section id="menu">
+        <div id="eatANDdrink">
+            <h1 id="eat" class="EandD">EAT</h1>
+            <!-- <h1 id="drink" class="EandD">DRINK</h1> -->
+        </div>
+        <div id="food"> 
+            <h1 class="main">Bread Basket</h1>
+            <p class="price">Assortment of fresh baked fruit breads and muffins 5.50</p>
+            <h1 class="main">Honey Almond Granola with Fruits</h1>
+            <p class="price">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p>
+            <h1 class="main">Belgian Waffle</h1>
+            <p class="price">Vanilla flavored batter with malted flour 7.50</p>
+            <h1 class="main">Scrambled Eggs</h1>
+            <p class="price">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p>
+            <h1 class="main">Blueberry Pancakes</h1>
+            <p class="syrup">With syrup, butter and lots of berries 8.50</p>
+        </div>
+    </section>
+    <section id="menu2">
+        <div id="drinks">
+            <h1 id="eat" class="EandD">DRINK'S</h1>
+            <!-- <h1 id="drink" class="EandD">DRINK</h1> -->
+        </div>
+        <div id="food"> 
+            <h1 class="main2">COFFEE</h1>
+            <p class="price2">Regular coffee 2.50</p>
+            <h1 class="main2">CHOCOLATE</h1>
+            <p class="price2">Chocolate espresso with milk 4.50</p>
+            <h1 class="main2">Corretto</h1>
+            <p class="price2">Whiskey and coffee 5.00</p>
+            <h1 class="main2">Iced Tea</h1>
+            <p class="price2">Hot tea, except not hot 3.00</p>
+            <h1 class="main2">Soda</h1>
+            <p class="price2">Coke, Sprite, Fanta, etc. 2.50</p>
+            <h1 class="main2">SHOT</h1>
+            <p class="jamun">Jamun shot. 2.00</p>
+        </div>
+    </section>
+    <section id="coffee2">
+        <div>
+            <img id="coffee2" src="./image/image3.jpg" alt="">
+        </div>
+    </section>
+    <h1 id="find">----WHERE TO FIND US----</h1>
+
+    <footer id="footer">
+        <div id="add"><h3>Find us at some address at some place.</h3></div>
+
+        <div id="map"><img src="./image/image4.jpg" alt="map image"></div>
+
+        <div id="FYI"><p>FYI! We offer full-service catering for any event, large or small. We understand your needs and will cater the food to satisfy both look and taste.</p></div>
+
+        <div id="message"><p><b>Reserve</b> a table, ask for today's special, or just send us a message:</p></div>
+
+        <div id="booktable">
+            <input type="text" name="Username" id="Username" placeholder="Name">
+            <br>
+            <input type="number" min="1" name="People" id="People" placeholder="How many People">
+            <br>
+            <input type="datetime-local" name="Time" id="Time">
+            <br>
+            <input type="text" name="Message" id="Message" placeholder="Message / Special Requirement">
+            <br>
+        </div>
+        <div>
+            <button id="button" class="w3-button w3-black" type="submit">SEND MESSAGE</button>
+        </div>
+        <div><h5 id="end">Design by Shubham</h5></div>
+    </footer>
+
+    
+</body>
+</html>
