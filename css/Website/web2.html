@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- हिंदी फ़ॉन्ट (इंटरनेट चालू होने पर लोड होगा) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<title>सुंदरकांड पाठ बुकिंग</title>
+
+<style>
+  /* ============================================
+     1. रंग (COLORS) - यहाँ से पूरी साइट का रंग बदलो
+     ============================================ */
+  :root {
+    --saffron: #E8741E;   /* मुख्य रंग (बटन, हेडिंग) */
+    --maroon:  #7A1F1F;   /* गहरा लाल (हेडर, फ़ुटर) */
+    --cream:   #FFF6E5;   /* पेज का बैकग्राउंड */
+    --text:    #3A2A1E;   /* सामान्य लिखावट का रंग */
+    --white:   #FFFFFF;
+  }
+
+  /* ============================================
+     2. बेसिक सेटिंग - पूरे पेज पर लगती है
+     ============================================ */
+  * {
+    box-sizing: border-box; /* चौड़ाई का हिसाब आसान करता है */
+    margin: 0;              /* डिफ़ॉल्ट खाली जगह हटाओ */
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif; /* फ़ॉन्ट का नाम */
+    background: var(--cream);       /* ऊपर वाला क्रीम रंग */
+    color: var(--text);
+    line-height: 1.7;               /* लाइनों के बीच का गैप */
+  }
+
+  h1, h2, h3 {
+    font-family: 'Tiro Devanagari Hindi', Georgia, serif; /* हेडिंग के लिए अलग फ़ॉन्ट */
+  }
+
+  /* ============================================
+     3. हेडर (सबसे ऊपर वाली पट्टी)
+     ============================================ */
+  header {
+    background: var(--maroon);
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;                  /* लोगो और मेन्यू एक लाइन में */
+    justify-content: space-between; /* एक बाएँ, एक दाएँ */
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  nav a {
+    color: var(--white);
+    text-decoration: none;          /* लिंक की underline हटाओ */
+    margin-left: 15px;
+  }
+
+  nav a:hover {
+    color: #FFC27A;                 /* माउस ऊपर ले जाओ तो रंग बदले */
+  }
+
+  /* ============================================
+     4. हीरो (पहला बड़ा सेक्शन)
+     ============================================ */
+  .hero {
+    text-align: center;             /* सब कुछ बीच में */
+    padding: 70px 20px;
+    background: linear-gradient(var(--saffron), #F4A259); /* ऊपर से नीचे रंग बदलना */
+    color: var(--white);
+  }
+
+  .hero h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    max-width: 500px;               /* लाइन ज़्यादा लंबी न हो */
+    margin: 0 auto 25px;            /* auto = बीच में रखो */
+  }
+
+  /* ============================================
+     5. बटन
+     ============================================ */
+  .btn {
+    display: inline-block;
+    background: var(--maroon);
+    color: var(--white);
+    padding: 12px 28px;             /* अंदर की जगह: ऊपर-नीचे, बाएँ-दाएँ */
+    border-radius: 25px;            /* गोल किनारे */
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;                /* माउस पर हाथ का निशान */
+  }
+
+  .btn:hover {
+    background: #5A1414;            /* होवर पर थोड़ा गहरा रंग */
+  }
+
+  /* ============================================
+     6. सेक्शन (हर भाग का सामान्य स्टाइल)
+     ============================================ */
+  section {
+    max-width: 900px;               /* पेज ज़्यादा चौड़ा न हो */
+    margin: 0 auto;                 /* बीच में लाओ */
+    padding: 40px 20px;
+  }
+
+  section h2 {
+    color: var(--maroon);
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  /* ============================================
+     7. पैकेज (3 डिब्बे एक लाइन में)
+     ============================================ */
+  .packages {
+    display: grid;                                   /* grid = पंक्ति/कॉलम */
+    grid-template-columns: repeat(3, 1fr);           /* 3 बराबर कॉलम */
+    gap: 20px;                                       /* डिब्बों के बीच गैप */
+  }
+
+  .card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 4px solid var(--saffron);            /* ऊपर की रंगीन पट्टी */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);           /* हल्की परछाई */
+    text-align: center;
+  }
+
+  .card h3 {
+    color: var(--saffron);
+    margin-bottom: 8px;
+  }
+
+  /* ============================================
+     8. बुकिंग फ़ॉर्म
+     ============================================ */
+  form {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  label {
+    display: block;                 /* लेबल अलग लाइन में */
+    margin: 12px 0 4px;
+    font-weight: bold;
+  }
+
+  input, select, textarea {
+    width: 100%;                    /* पूरी चौड़ाई */
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--saffron); /* क्लिक करने पर रंगीन लाइन */
+  }
+
+  form .btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* ============================================
+     9. फ़ुटर (सबसे नीचे)
+     ============================================ */
+  footer {
+    background: var(--maroon);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* ============================================
+     10. व्हाट्सऐप बटन (स्क्रीन पर टिका रहता है)
+     ============================================ */
+  .whatsapp {
+    position: fixed;                /* स्क्रॉल करने पर भी वहीं रहे */
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: var(--white);
+    padding: 12px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* ============================================
+     11. मोबाइल के लिए (स्क्रीन छोटी हो तो)
+     ============================================ */
+  @media (max-width: 700px) {
+    .packages {
+      grid-template-columns: 1fr;   /* 3 की जगह 1 कॉलम */
+    }
+    header {
+      flex-direction: column;       /* लोगो और मेन्यू ऊपर-नीचे */
+      gap: 8px;
+    }
+    .hero h2 {
+      font-size: 26px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- हेडर -->
+  <header>
+    <h1>🚩 श्री सुंदरकांड पाठ</h1>
+    <nav>
+      <a href="#packages">पैकेज</a>
+      <a href="#booking">बुकिंग</a>
+      <a href="#contact">संपर्क</a>
+    </nav>
+  </header>
+
+  <!-- हीरो -->
+  <div class="hero">
+    <h2>अपने घर में सुंदरकांड पाठ करवाएँ</h2>
+    <p>अनुभवी पंडित जी के साथ विधि-विधान से पाठ। तारीख चुनें, बाकी हम संभाल लेंगे।</p>
+    <a href="#booking" class="btn">पाठ बुक करें</a>
+  </div>
+
+  <!-- पैकेज -->
+  <section id="packages">
+    <h2>हमारे पैकेज</h2>
+    <div class="packages">
+      <div class="card">
+        <h3>घर पर पाठ</h3>
+        <p>हमारी समिति आपके घर आकर सुंदरकांड का पाठ करेगी।</p>
+        <p><b>₹ 2,100 से शुरू</b></p>
+      </div>
+      <div class="card">
+        <h3>मंदिर में पाठ</h3>
+        <p>मंदिर में संपूर्ण पाठ और आरती।</p>
+        <p><b>₹ 1,100 से शुरू</b></p>
+      </div>
+      <div class="card">
+        <h3>ऑनलाइन पाठ</h3>
+        <p>वीडियो कॉल पर लाइव पाठ, कहीं से भी जुड़ें।</p>
+        <p><b>₹ 1,100 से शुरू</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- बुकिंग फ़ॉर्म -->
+  <section id="booking">
+    <h2>पाठ बुक करें</h2>
+    <form>
+      <label for="name">आपका नाम</label>
+      <input type="text" id="name" placeholder="पूरा नाम लिखें" required>
+
+      <label for="phone">फ़ोन नंबर</label>
+      <input type="tel" id="phone" placeholder="10 अंकों का नंबर" required>
+
+      <label for="type">पाठ का प्रकार</label>
+      <select id="type">
+        <option>घर पर पाठ</option>
+        <option>मंदिर में पाठ</option>
+        <option>ऑनलाइन पाठ</option>
+      </select>
+
+      <label for="date">तारीख</label>
+      <input type="date" id="date" required>
+
+      <label for="time">समय</label>
+      <select id="time">
+        <option>सुबह (9 - 1)</option>
+        <option>शाम (8 - 11)</option>
+      </select>
+
+      <label for="address">पता</label>
+      <textarea id="address" rows="3" placeholder="पाठ का पूरा पता"></textarea>
+
+      <button type="submit" class="btn">बुकिंग भेजें</button>
+    </form>
+  </section>
+
+  <!-- संपर्क -->
+  <section id="contact">
+    <h2>संपर्क करें</h2>
+    <p style="text-align:center;">📞 +91 8966934950 📞 +91 7869440531<br>📍 नवयुवक बाल सुंदरकांड समिति, गंगाखेड़ी, तहसील - सीतामऊ, जिला - मंदसौर</p>
+  </section>
+
+  <!-- फ़ुटर -->
+  <footer>
+    <p>जय श्री राम 🙏 | © 2026 सुंदरकांड पाठ बुकिंग</p>
+  </footer>
+
+  <!-- व्हाट्सऐप बटन (नंबर बदल लेना) -->
+  <a class="whatsapp" href="https://wa.me/8966934950" href="https://wa.me/7869440531">व्हाट्सऐप</a>
+
+</body>
+</html>
